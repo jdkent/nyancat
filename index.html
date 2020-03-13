@@ -290,6 +290,7 @@
 			}
 			function onDocumentMouseDown(event) {
 				running=!running;
+				song.play()
 				if(running){
 					song.playbackRate=1;
 					song.muted=false;
