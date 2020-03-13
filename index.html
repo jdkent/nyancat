@@ -292,11 +292,9 @@
 			function onDocumentMouseDown(event) {
 				running=!running;
 				if(running){
-					song.play();
-					song2.pause();
+					song.playbackRate=1;
 				}else{
-					song.pause();
-					song2.play();
+					song.playbackRate=0.1;
 				}
 			}
 			function animate() {
