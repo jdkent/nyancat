@@ -34,9 +34,7 @@
 	</head>
 	<body>
 		<div id="a">3D Nyan Cat!!!!!</div>
-		<div id="b">Built in WebGL using <a href="http://github.com/mrdoob/three.js">Three.js</a>.</div>
 		<div id="c">Click anywhere to pause.</div>
-		<div id="d">More <a href="http://nyan.cat/" target="_blank">Nyan Cat</a>.</div>
 
 		<script src="js/Three.js"></script>
 		<script src="js/Detector.js"></script>
@@ -68,9 +66,9 @@
 				o.add( mesh );
 			}
 			function init() {
-				song.setAttribute('src', 'nyanlooped.mp3');
+				song.setAttribute('src', 'spongebob_theme_song.mp3');
 				song.setAttribute('loop', 'true');
-				song2.setAttribute('src', 'nyanslow.mp3');
+				song2.setAttribute('src', 'spongebob_theme_song_slow.mp3');
 				song2.setAttribute('loop', 'true');
 				song.play();
 				container = document.createElement( 'div' );
@@ -165,14 +163,14 @@
 				helper(	   face,  12,   0,   0,   2,   2,   1, 0x222222);
 				helper(	   face,  10,  -2,   0,   2,   2,   1, 0x222222);
 				
-				helper(	   face,   1, -5,   .5,  14,   5,   1, 0x999999);
-				helper(	   face,   3, -4,   .5,  10,   8,   1, 0x999999);
-				helper(	   face,   2, -1,   .5,   2,  10,   1, 0x999999);
-				helper(	   face,  12, -1,   .5,   2,  10,   1, 0x999999);
-				helper(	   face,   4, -2,   .5,   1,   2,   1, 0x999999);
-				helper(	   face,   5, -3,   .5,   1,   1,   1, 0x999999);
-				helper(	   face,  11, -2,   .5,   1,   2,   1, 0x999999);
-				helper(	   face,  10, -3,   .5,   1,   1,   1, 0x999999);
+				helper(	   face,   1, -5,   .5,  14,   5,   1, 0x53EA0D);
+				helper(	   face,   3, -4,   .5,  10,   8,   1, 0x53EA0D);
+				helper(	   face,   2, -1,   .5,   2,  10,   1, 0x53EA0D);
+				helper(	   face,  12, -1,   .5,   2,  10,   1, 0x53EA0D);
+				helper(	   face,   4, -2,   .5,   1,   2,   1, 0x53EA0D);
+				helper(	   face,   5, -3,   .5,   1,   1,   1, 0x53EA0D);
+				helper(	   face,  11, -2,   .5,   1,   2,   1, 0x53EA0D);
+				helper(	   face,  10, -3,   .5,   1,   1,   1, 0x53EA0D);
 				//Eyes
 				helper(	   face,   4,  -6,  .6,   2,   2,   1, 0x222222);
 				helper(	   face,  11,  -6,  .6,   2,   2,   1, 0x222222);
