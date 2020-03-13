@@ -50,7 +50,8 @@
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
 			var clock = new THREE.Clock(), deltaSum=0, tick=0, frame=0, running=true;
-			var song = document.createElement('audio'), song2 = document.createElement('audio');
+			var song = document.createElement('audio')
+			song.setAttribute('muted', 'true');
 			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 			document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
@@ -68,8 +69,6 @@
 			function init() {
 				song.setAttribute('src', 'spongebob_theme_song.mp3');
 				song.setAttribute('loop', 'true');
-				song2.setAttribute('src', 'spongebob_theme_song_slow.mp3');
-				song2.setAttribute('loop', 'true');
 				song.play();
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
@@ -293,8 +292,10 @@
 				running=!running;
 				if(running){
 					song.playbackRate=1;
+					song.muted=false;
 				}else{
 					song.playbackRate=0.1;
+					song.muted=false;
 				}
 			}
 			function animate() {
