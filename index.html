@@ -35,7 +35,8 @@
 	<body>
 		<div id="a">3D Nyan Cat!!!!!</div>
 		<div id="c">Click anywhere to pause.</div>
-
+		<button id="sponge" type="button">Sponge Bob Square Pants</button>
+		<button id="romance" type="button">Bad Romance</button>
 		<script src="js/Three.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/RequestAnimationFrame.js"></script>
@@ -53,6 +54,8 @@
 			var song = document.createElement('audio')
 			song.setAttribute('muted', 'true');
 			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+			document.getElementById("sponge").addEventListener( 'mousedown', selectSpongeSong, false);
+			document.getElementById("romance").addEventListener( 'mousedown', selectRomanceSong, false);
 			document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
 			init();
@@ -67,8 +70,7 @@
 				o.add( mesh );
 			}
 			function init() {
-				song.setAttribute('src', 'spongebob_theme_song.mp3');
-				song.setAttribute('loop', 'true');
+
 				container = document.createElement( 'div' );
 				document.body.appendChild( container );
 
@@ -289,7 +291,6 @@
 			}
 			function onDocumentMouseDown(event) {
 				running=!running;
-				song.play()
 				if(running){
 					song.playbackRate=1;
 					song.muted=false;
@@ -297,6 +298,20 @@
 					song.playbackRate=0.1;
 					song.muted=false;
 				}
+			}
+			function selectSong(song_mp3) {
+				song.setAttribute('src', song_mp3);
+				song.setAttribute('loop', 'true');
+				var playPromise = song.play();
+				return playPromise
+			}
+			function selectSpongeSong(event) {
+				ppromise = selectSong("spongebob_theme_song.mp3");
+				Promise.all([ppromise]);
+			}
+			function selectRomanceSong(event) {
+				ppromise = selectSong("bad_romance.mp3");
+				Promise.all([ppromise])
 			}
 			function animate() {
 				requestAnimationFrame( animate );
