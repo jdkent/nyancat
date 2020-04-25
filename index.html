@@ -37,6 +37,7 @@
 		<div id="c">Click anywhere to pause.</div>
 		<button id="sponge" type="button">Sponge Bob Square Pants</button>
 		<button id="romance" type="button">Bad Romance</button>
+		<button id="dimmadome" type="button">Dimmadome</button>
 		<script src="js/Three.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/RequestAnimationFrame.js"></script>
@@ -56,6 +57,7 @@
 			document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 			document.getElementById("sponge").addEventListener( 'mousedown', selectSpongeSong, false);
 			document.getElementById("romance").addEventListener( 'mousedown', selectRomanceSong, false);
+			document.getElementById("dimmadome").addEventListener( 'mousedown', selectDimmadomeSong, false);
 			document.addEventListener( 'mousedown', onDocumentMouseDown, false );
 
 			init();
@@ -311,6 +313,10 @@
 			}
 			function selectRomanceSong(event) {
 				ppromise = selectSong("bad_romance.mp3");
+				Promise.all([ppromise])
+			}
+			function selectDimmadomeSong(event) {
+				ppromise = selectSong("dimmadome.mp3");
 				Promise.all([ppromise])
 			}
 			function animate() {
